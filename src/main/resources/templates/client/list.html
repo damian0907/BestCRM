@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client list</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>Title</title>
+</head>
+
+<style>
+
+    .content-table thead tr {
+        background-color: #009879;
+        color: #ffffff;
+        text-align: left;
+    }
+
+</style>
+
+<body>
+    <h1> Lista moich klientow</h1>
+
+    <table class="content-table">
+         <thead>
+
+         <th>Id</th>
+         <th>Adres</th>
+         <th>Email</th>
+         <th>Ostatni kontakt</th>
+         <th>Nazwa</th>
+         <th>Telefon</th>
+
+         </thead>
+        <tbody>
+
+
+        <tr th:each= "client: ${clients}">
+
+
+            <td th:text="${client.id}"></td>
+            <td th:text="${client.address}"></td>
+            <td th:text="${client.email}"></td>
+            <td th:text="${client.lastContact}"></td>
+            <td th:text="${client.name}"></td>
+            <td th:text="${client.phone}"></td>
+
+            <td><a th:href="@{/client/delete/{id}(id=${client.id})}">delete</a>
+            </td>
+
+        </tr>
+
+        </tbody>
+
+    </table>
+
+</body>
+</html>

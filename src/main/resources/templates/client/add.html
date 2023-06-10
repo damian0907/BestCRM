@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AddClient</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<h2 class="header">Adding new client</h2>
+
+<form method="post" th:action="@{/client/save}" th:object="${client}">
+    <input id="name" placeholder="nazwa" th:field="*{name}" type="text">
+    <input id="id" placeholder="id" th:field="*{id}" type="text">
+    <input id="address" placeholder="adres" th:field="*{address}" type="text">
+    <input id="phone" placeholder="telefon" th:field="*{phone}" type="text">
+    <input id="email" placeholder="email" th:field="*{email}" type="text">
+    <input id="date" placeholder="data" th:field="*{lastContact}" type="text">
+    <button type="submit">Zapisz</button>
+</form>
+
+</body>
+</html></html>

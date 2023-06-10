@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Deal</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #009879;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+<h1>Add Deal</h1>
+<form action="/deals/save" method="post">
+  <table>
+    <tr>
+      <th>Deal ID</th>
+      <th>Budget</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Client ID</th>
+      <th>Contact Point</th>
+    </tr>
+    <tr>
+      <td><input type="text" name="dealId"></td>
+      <td><input type="text" name="budget"></td>
+      <td><input type="text" name="email"></td>
+      <td><input type="text" name="phone"></td>
+      <td><input type="text" name="clientId"></td>
+
+    </tr>
+  </table>
+  <br>
+  <input type="submit" value="Add Deal">
+</form>
+
+<script>
+  // Redirect to listDeals.html after form submission
+  window.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function () {
+      window.location.href = '/deals/';
+    });
+  });
+</script>
+</body>
+</html>
