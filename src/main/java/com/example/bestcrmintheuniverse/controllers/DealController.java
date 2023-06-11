@@ -47,6 +47,7 @@ public class DealController {
 
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable Long id) {
+        System.out.print("delete deal with id");
         this.dealRepository.deleteById(id);
         return "redirect:/deals/";
     }
@@ -61,8 +62,9 @@ public class DealController {
 
         // Add the Notes object to the model for rendering in the view
         model.addAttribute("notes", notes);
+        model.addAttribute("deal", deal);
 
-        return "notesForm";
+        return "deals/notesForm";
     }
 
 }
